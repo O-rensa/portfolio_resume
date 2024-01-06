@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { SideBarNavComponent } from './side-bar-nav/side-bar-nav.component';
 
 @Component({
@@ -14,11 +14,18 @@ import { SideBarNavComponent } from './side-bar-nav/side-bar-nav.component';
 })
 export class AppComponent {
   title = 'portfolio_resume_project';
-  endpoint: string;
+  showNavbar = true;
 
   constructor(
     private _router: Router
   ){
-    this.endpoint = _router.url;
+    _router.events.subscribe(val => {
+      if (val instanceof NavigationEnd)
+        if (val.url == '/error'){
+          this.showNavbar = false;
+        } else {
+          this.showNavbar = true;
+        }
+    });
   }
 }
