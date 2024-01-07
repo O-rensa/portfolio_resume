@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { navigationData } from './navigationData';
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-side-bar-nav',
   standalone: true,
-  imports: [NgFor,
+  imports: [NgFor, NgClass, NgIf,
     RouterLink
   ],
   templateUrl: './side-bar-nav.component.html',
@@ -14,5 +14,6 @@ import { RouterLink } from '@angular/router';
 })
 export class SideBarNavComponent {
   sideBarNavigationData = navigationData
+  isCollapsed = false;
 
 }
