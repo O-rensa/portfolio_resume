@@ -1,7 +1,7 @@
 export const navigationData = [
     {
         route: '/hero',
-        icon: 'fa fa-user-circle',
+        icon: 'fa-solid fa-circle-user',
         label: 'Welcome'
     }
 ]

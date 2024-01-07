@@ -1,18 +1,27 @@
 <div class="sidenav" [ngClass]="isCollapsed ? 'sidenav-collapsed': ''">
     <div class="logo-container">
-        <button class="logo">
-            <img src="./assets/setton.jpg" alt="setton">
+        <button class="logo" (click)="toggleCollapse()">
+            <img src="https://github.com/O-rensa/portfolio_resume/blob/main/portfolio_resume_project/src/app/side-bar-nav/assets/setton.jpg?raw=true" 
+            alt="setton"
+            height="24px"
+            width="24px">
         </button>
-        <div class="logo-text" *ngIf="isCollapsed"></div>
-        <button class="btn-close" *ngIf="isCollapsed">
-            <i class="fa fa-times"></i>
+        <div class="logo-text" *ngIf="isCollapsed">Navigation</div>
+        <button class="btn-close" *ngIf="isCollapsed" (click)="closeSideNav()">
+            <i class="fa fa-times close-icon"></i>
         </button>        
     </div>
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item" *ngFor="let data of sideBarNavigationData">
-            <a href="" class="sidenav-nav-link" [routerLink]="data.route">
+            <a class="sidenav-nav-link" [routerLink]="data.route">
                 <i class="sidenav-link-icon" [class]="data.icon"></i>
-                <span class="sidenav-link-text">{{data.label}}</span>
+                <span class="sidenav-link-text" *ngIf="isCollapsed">{{data.label}}</span>
+            </a>
+        </li>
+        <li class="sidenav-nav-item">
+            <a href="https://www.linkedin.com/in/renzlendio/" target="_blank" class="sidenav-nav-link">
+                <i class="fa-brands fa-linkedin-in sidenav-link-icon"></i>
+                <span class="sidenav-link-text" *ngIf="isCollapsed">LinkedIn</span>
             </a>
         </li>
     </ul>

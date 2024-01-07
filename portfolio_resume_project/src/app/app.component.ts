@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { SideBarNavComponent } from './side-bar-nav/side-bar-nav.component';
+import { sideNavToggle } from './shared/sideNavToggleInterface';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,8 @@ import { SideBarNavComponent } from './side-bar-nav/side-bar-nav.component';
 export class AppComponent {
   title = 'portfolio_resume_project';
   showNavbar = true;
+  isNavbarCollapsed = false;
+  screenWidth = 0;
 
   constructor(
     private _router: Router
@@ -27,5 +30,10 @@ export class AppComponent {
           this.showNavbar = true;
         }
     });
+  };
+
+  onToggleSideNav(data: sideNavToggle): void {
+    this.isNavbarCollapsed = data.isCollapsed;
+    this.screenWidth = data.screenWidth;
   }
 }
