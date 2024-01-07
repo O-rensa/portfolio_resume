@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { SideBarNavComponent } from './side-bar-nav/side-bar-nav.component';
 import { sideNavToggle } from './shared/sideNavToggleInterface';
+import { allowedUrls } from './app.allowedurls';
 
 @Component({
   selector: 'app-root',
@@ -18,17 +19,22 @@ export class AppComponent {
   showNavbar = true;
   isNavbarCollapsed = false;
   screenWidth = 0;
+  allowedUrls = allowedUrls;
 
   constructor(
     private _router: Router
   ){
     _router.events.subscribe(val => {
-      if (val instanceof NavigationEnd)
-        if (val.url == '/error'){
+      if (val instanceof NavigationEnd){
+        if (val.url == '/'){
+          this._router.navigateByUrl('hero');
+        }
+        if (!this.allowedUrls.includes(val.url)){
           this.showNavbar = false;
         } else {
           this.showNavbar = true;
         }
+      }
     });
   };
 

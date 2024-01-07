@@ -9,18 +9,8 @@ export const routes: Routes = [
         component: HeroComponent,
     },
     {
-        path: 'error',
+        path: '**',
         title: 'PAGE NOT FOUND',
         component: PageNotFoundComponent,
-    },
-    {
-        path: '',
-        redirectTo: '/hero',
-        pathMatch: 'full'
-    },
-    {
-        path: '**',
-        redirectTo: '/error',
-        pathMatch: 'full'
     }
 ];
