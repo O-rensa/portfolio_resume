@@ -6,8 +6,8 @@
             height="24px"
             width="24px">
         </button>
-        <div class="logo-text" *ngIf="isCollapsed">Navigation</div>
-        <button class="btn-close" *ngIf="isCollapsed" (click)="closeSideNav()">
+        <div class="logo-text" *ngIf="showlabel">Navigation</div>
+        <button class="btn-close" *ngIf="showlabel" (click)="closeSideNav()">
             <i class="fa fa-times close-icon"></i>
         </button>        
     </div>
@@ -15,13 +15,13 @@
         <li class="sidenav-nav-item" *ngFor="let data of sideBarNavigationData">
             <a class="sidenav-nav-link" [routerLink]="data.route">
                 <i class="sidenav-link-icon" [class]="data.icon"></i>
-                <span class="sidenav-link-text" *ngIf="isCollapsed">{{data.label}}</span>
+                <span class="sidenav-link-text" *ngIf="showlabel">{{data.label}}</span>
             </a>
         </li>
         <li class="sidenav-nav-item">
             <a href="https://www.linkedin.com/in/renzlendio/" target="_blank" class="sidenav-nav-link">
                 <i class="fa-brands fa-linkedin-in sidenav-link-icon"></i>
-                <span class="sidenav-link-text" *ngIf="isCollapsed">LinkedIn</span>
+                <span class="sidenav-link-text" *ngIf="showlabel">LinkedIn</span>
             </a>
         </li>
     </ul>

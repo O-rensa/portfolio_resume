@@ -18,14 +18,24 @@ export class SideBarNavComponent {
   sideBarNavigationData = navigationData
   screenWidth = 0;
   isCollapsed = false;
+  showlabel = false;
 
-  toggleCollapse(): void {
+  async toggleCollapse(): Promise<void> {
     this.isCollapsed = !this.isCollapsed;
     this.onToggleSideNav.emit({screenWidth: this.screenWidth, isCollapsed: this.isCollapsed});
+    if (this.showlabel == false ) {
+      await new Promise(resolve => {
+        setTimeout(resolve, 250);
+      });
+      this.showlabel = true;
+    } else {
+      this.showlabel = false;
+    }
   }
 
   closeSideNav(): void {
     this.isCollapsed = false;
+    this.showlabel = false;
     this.onToggleSideNav.emit({screenWidth: this.screenWidth, isCollapsed: this.isCollapsed});
   }
 }
