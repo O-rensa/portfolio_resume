@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { SideBarNavComponent } from './side-bar-nav/side-bar-nav.component';
 import { sideNavToggle } from './shared/sideNavToggleInterface';
 import { allowedUrls } from './app.allowedurls';
+import { BodyComponent } from './body/body.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, 
-    RouterOutlet,
-    SideBarNavComponent],
+    SideBarNavComponent,
+    BodyComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'portfolio_resume_project';
