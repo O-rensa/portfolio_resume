@@ -1,5 +1,21 @@
-<app-side-bar-nav *ngIf="showNavbar" (onToggleSideNav)="onToggleSideNav($event)"></app-side-bar-nav>
-<app-body
-    [isNavbarCollapsed]="isNavbarCollapsed"
-    [screenWidth]="screenWidth"
-></app-body>
+<div class="bg-animation-wrapper">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="website-content">
+    <div class="content-container">
+        <app-side-bar-nav *ngIf="showNavbar" (onToggleSideNav)="onToggleSideNav($event)"></app-side-bar-nav>
+        <app-body
+            [isNavbarCollapsed]="isNavbarCollapsed"
+            [screenWidth]="screenWidth"
+        ></app-body>
+    </div>
+</div>
