@@ -1,0 +1,44 @@
+/* hero-component-container start */
+.hero-component-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* hero-container start */
+.hero-container {
+    height: 12.5rem;
+    width: 12.5rem;
+    padding: 0.5rem;
+    background-color: #0072ff;
+    border-radius: 100px;
+    box-shadow: 0px 0px 20px #0072ff;
+}
+
+.hero-container img {
+    border-radius: 100px;
+}
+
+/* hero-name start */
+.hero-text {
+    padding: 20px 0px;
+}
+
+.hero-text h1 {
+    -webkit-text-stroke: #39ff14 1px;
+}
+
+.hero-titles {
+    font-size: 1.3rem;
+    -webkit-text-stroke: #39ff14 1px;
+}
+
+/* hero-name end */
+
+/*hero-container end */
+
+/* hero-component-container end */
