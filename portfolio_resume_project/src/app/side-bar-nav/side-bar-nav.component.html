@@ -1,7 +1,7 @@
 <div class="sidenav" [ngClass]="isCollapsed ? 'sidenav-collapsed': ''">
     <div class="logo-container">
         <button class="logo" (click)="toggleCollapse()">
-            <img src="https://github.com/O-rensa/portfolio_resume/blob/main/portfolio_resume_project/src/app/side-bar-nav/assets/setton.jpg?raw=true" 
+            <img src="https://raw.githubusercontent.com/O-rensa/portfolio_resume_assets/main/website_assets/side_bar_assets/setton.jpg" 
             alt="setton"
             height="24px"
             width="24px">
@@ -11,6 +11,8 @@
             <i class="fa fa-times close-icon"></i>
         </button>        
     </div>
+
+    <!-- navigationData -->
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item" *ngFor="let data of sideBarNavigationData">
             <a class="sidenav-nav-link" [routerLink]="data.route">
@@ -18,6 +20,15 @@
                 <span class="sidenav-link-text" *ngIf="showlabel">{{data.label}}</span>
             </a>
         </li>
+
+        <!-- Email -->
+        <li class="sidenav-nav-item">
+            <a href="mailto:renzworx@duck.com" class="sidenav-nav-link" target="_blank">
+                <i class="sidenav-link-icon fa-solid fa-envelope"></i>
+                <span class="sidenav-link-text" *ngIf="showlabel">RenzWorX&#64;duck.com</span>
+            </a>
+        </li>
+        <!-- Linked In -->
         <li class="sidenav-nav-item">
             <a href="https://www.linkedin.com/in/renzlendio/" target="_blank" class="sidenav-nav-link">
                 <i class="fa-brands fa-linkedin-in sidenav-link-icon"></i>
