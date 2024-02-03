@@ -7,9 +7,9 @@
 .page_404{ 
     background:#fff; 
     font-family: 'Arvo', serif;
-    position: absolute;
+    position: fixed;
     top: 50%;
-    transform: translate( -6%, -50% );
+    transform: translate( -9%, -50% );
     width: 100%;
 }
 
