@@ -1,0 +1,28 @@
+<div class="certifications-wrapper">
+    <div *ngFor="let certification of certifications">
+        <div class="certifications-container">
+            <div class="certifications-title-container">
+                <span>{{certification.title}}</span>
+            </div>
+            <hr id="disappearingHr">
+            <div class="certifications-image-container">
+                <img 
+                [src]="certification.imageLink" 
+                width="100%"
+                >
+            </div>
+            <div class="certifications-details">
+                <span>Issued By: {{ certification.issuedBy }}</span>
+                <span>Issued Date: {{ certification.issuedDate }}</span>
+            </div>
+            <div class="certifications-item-button-container">
+                <a [href]="certification.link" target="_blank">
+                    <button class="button-6" role="button">
+                        <span>Show Credential</span>
+                    </button>
+                </a>
+            </div> 
+        </div>
+    </div>
+    
+</div>

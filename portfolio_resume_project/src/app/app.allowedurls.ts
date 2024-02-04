@@ -1,4 +1,5 @@
 export const allowedUrls = [
     '/hero',
-    '/creations'
+    '/creations',
+    '/certifications'
 ]

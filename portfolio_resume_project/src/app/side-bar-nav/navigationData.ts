@@ -8,5 +8,10 @@ export const navigationData = [
         route: '/creations',
         icon: 'fa-solid fa-hammer',
         label: 'Creations'
+    },
+    {
+        route: '/certifications',
+        icon: 'fa-solid fa-ribbon',
+        label: 'Certifications'
     }
 ]
