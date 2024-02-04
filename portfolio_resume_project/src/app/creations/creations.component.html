@@ -1,3 +1,31 @@
 <div class="creations-container">
-    
+    <div class="creations-group-container" *ngFor="let creationsGroup of creations">
+        <span class="creation-group-title">{{ creationsGroup.creationGroup }}</span>
+        <hr>
+        <div class="creation-items-container">
+            <div class="creation-items" *ngFor="let items of creationsGroup.projects">
+                <div class="creation-item-title-container">
+                    <span class="creation-item-title">{{ items.title }}</span>
+                </div>
+                <div class="creation-item-image-container">
+                    <img 
+                    [src]="items.imageLink "
+                    width="100%"
+                    >
+                </div>
+                <div class="creation-item-skills-container">
+                    <ul>
+                        <li *ngFor="let skill of items.skills;">{{ skill }}</li>
+                    </ul>
+                </div>
+                <div class="creation-item-button-container">
+                    <a [href]="items.link" target="_blank">
+                        <button class="button-6" role="button">
+                            <span>View</span>
+                        </button>
+                    </a>
+                </div>     
+            </div>
+        </div>
+    </div>
 </div>
